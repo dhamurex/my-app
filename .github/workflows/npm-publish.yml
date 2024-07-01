@@ -13,15 +13,15 @@ jobs:
     name: My Job1
     runs-on: ubuntu-latest
     steps: 
-      -name: First step -job1
-      run: echo "First Step in job1"
+      - name: First step -job1
+        run: echo "First Step in job1"
 
-      -name: create a file -job1
-      run: touch test.txt
+      - name: create a file -job1
+        run: touch test.txt
 
   job2:
-    -name: My Job2    
+    name: My Job2    
     runs-on: ubuntu-latest
     steps: 
-      -name: verify the file - job2
-      run: ls -1
+      - name: verify the file - job2
+        run: ls -1
