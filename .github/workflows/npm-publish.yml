@@ -1,33 +1,27 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
-name: Node.js Package
+name: nextJS pipeline
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      -master
 
 jobs:
-  build:
+  job1:
+    name: My Job1
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm ci
-      - run: npm test
+    steps: 
+      -name: First step -job1
+      run: echo "First Step in job1"
 
-  publish-npm:
-    needs: build
+      -name: create a file -job1
+      run: touch test.txt
+
+  job2:
+    -name: My Job2    
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+    steps: 
+      -name: verify the file - job2
+      run: ls -1
