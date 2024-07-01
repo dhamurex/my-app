@@ -6,7 +6,7 @@ name: nextJS pipeline
 on:
   push:
     branches:
-      -master
+      - master
 
 jobs:
   job1:
