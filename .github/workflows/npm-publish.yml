@@ -4,9 +4,10 @@
 name: nextJS pipeline
 
 on:
-  push:
-    branches:
-      - master
+ # push:
+  #  branches:
+   #   - master
+   workflow_dispatch:
 
 jobs:
   job1:
@@ -45,6 +46,8 @@ jobs:
     steps: 
       - name: before the download
         run: ls -l
+
+
         
       - name: download the job1 file
         uses: actions/download-artifact@v4
