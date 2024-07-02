@@ -3,9 +3,9 @@ name: NextJS Build as Export
 on:
   push:
     branch:
-      -master
+      - master
 
-Jobs:
+jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
